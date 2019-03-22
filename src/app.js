@@ -1,21 +1,32 @@
 const express = require('express');
 
-const app = express()
+const app = express();
 
 app.get('', (req, res) => {
-  res.send('Hello, world')
+  res.send(
+    '<h1>Hello World</h1>'
+  )
 })
 
 app.get('/help', (req, res) => {
-  res.send('This is help page, yummy')
+  res.send([{
+    name: "Danny",
+    age: "13",
+  }, {
+    name: 'Fellini',
+    age: 44,
+  }])
 })
 
 app.get('/about', (req, res) => {
-  res.send('This is about page, delicious')
+  res.send('<h1>About Page</h1>')
 })
 
 app.get('/weather', (req, res) => {
-  res.send('This is weather page, now I am all wet')
+  res.send([{
+    forecast: 'I have no idea',
+    location: 'Sydney',
+  }])
 })
 
 
