@@ -2,9 +2,16 @@ const path = require('path'); // core module
 const express = require('express');
 
 const app = express();
-const publicDirectoryPath = path.join(__dirname, '../public');
 
+// Define paths for Express.js config
+const publicDirectoryPath = path.join(__dirname, '../public');
+const viewsPath = path.join(__dirname, '../templates');
+
+// Setup handlbars engine and views location.
 app.set('view engine', 'hbs'); // HBS uses handlbars in the background and is frendlier to use with Express.js
+app.set('views', viewsPath);
+
+// Setup static directory to serve
 app.use(express.static(publicDirectoryPath));
 
 app.get('', (req, res) => {
