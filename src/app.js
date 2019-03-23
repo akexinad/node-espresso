@@ -46,11 +46,11 @@ app.get('/weather', (req, res) => {
     })
   }
 
-  res.send([{
+  res.send({
     location: 'Siena',
     address: req.query.address,
     forecast: 'I have no idea yet',
-  }])
+  })
 });
 
 app.get('/products', (req, res) => {
