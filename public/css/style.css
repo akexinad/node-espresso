@@ -4,6 +4,15 @@ body {
   max-width: 960px;
   margin: 0 auto;
   padding: 0 1em;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* VH = viewport height, so this is 100% of the viewport height */
+}
+
+.container {
+  flex-grow: 1;
 }
 
 footer {
@@ -26,4 +35,8 @@ header a {
   color: #888888;
   margin-right: 2em;
   text-decoration: none;
+}
+
+.portrait {
+  width: 260px;
 }
