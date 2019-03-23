@@ -46,6 +46,22 @@ app.get('/weather', (req, res) => {
   }])
 });
 
+app.get('/help/*', (req, res) => {
+  res.render('404', {
+    title: '404',
+    name: 'Fellini',
+    errorMessage: 'Help Article Not Found.'
+  })
+});
+
+app.get('*', (req, res) => {
+  res.render('404', {
+    title: '404',
+    name: 'Fellini',
+    errorMessage: 'Page Not Found'
+  })
+});
+
 app.listen(3000, () => {
   console.log('Server is listening on port 3000');
 });
