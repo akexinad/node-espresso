@@ -1,0 +1,9 @@
+h1 {
+  color: indigo;
+}
+
+img {
+  max-width: 250px;
+  border-bottom-left-radius: 3em;
+  border-top-right-radius: 3em;
+}
