@@ -4,26 +4,28 @@ const express = require('express');
 const app = express();
 const publicDirectoryPath = path.join(__dirname, '../public');
 
+app.set('view engine', 'hbs'); // HBS uses handlbars in the background and is frendlier to use with Express.js
 app.use(express.static(publicDirectoryPath));
 
 app.get('', (req, res) => {
-  res.send(
-    '<h1>Weather</h1>'
-  )
-});
-
-app.get('/help', (req, res) => {
-  res.send([{
-    name: "Danny",
-    age: "13",
-  }, {
-    name: 'Fellini',
-    age: 44,
-  }])
+  res.render('index', {
+    title: 'Weather App',
+    name: 'Fellini'
+  })
 });
 
 app.get('/about', (req, res) => {
-  res.send('<h1>About Page</h1>')
+  res.render('about', {
+    title: 'About Me',
+    name: 'Benigni'
+  })
+});
+
+app.get('/help', (req, res) => {
+  res.render('help', {
+    title: 'FAQ',
+    name: 'Germi'
+  })
 });
 
 app.get('/weather', (req, res) => {
